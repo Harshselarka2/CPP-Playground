@@ -1,4 +1,7 @@
 .vscode
+# Build output
+build/
+
 # VS Code
 .vscode/
 

@@ -4,17 +4,10 @@
     {
       "label": "Build C++23",
       "type": "shell",
-      "command": "g++",
+      "command": "bash",
       "args": [
-        "-std=c++23",
-        "-Wall",
-        "-Wextra",
-        "-Wpedantic",
-        "-O2",
-        "-g",
-        "${file}",
-        "-o",
-        "${fileBasenameNoExtension}"
+        "-c",
+        "mkdir -p build && g++ -std=c++23 -Wall -Wextra -Wpedantic -O2 -g ${file} -o build/${fileBasenameNoExtension}"
       ],
       "group": {
         "kind": "build",
@@ -24,33 +17,19 @@
     {
       "label": "Build Debug",
       "type": "shell",
-      "command": "g++",
+      "command": "bash",
       "args": [
-        "-std=c++23",
-        "-Wall",
-        "-Wextra",
-        "-O0",
-        "-g",
-        "${file}",
-        "-o",
-        "${fileBasenameNoExtension}"
+        "-c",
+        "mkdir -p build && g++ -std=c++23 -Wall -Wextra -O0 -g ${file} -o build/${fileBasenameNoExtension}"
       ]
     },
     {
       "label": "Build ASan",
       "type": "shell",
-      "command": "g++",
+      "command": "bash",
       "args": [
-        "-std=c++23",
-        "-Wall",
-        "-Wextra",
-        "-O1",
-        "-g",
-        "-fsanitize=address,undefined",
-        "-fno-omit-frame-pointer",
-        "${file}",
-        "-o",
-        "${fileBasenameNoExtension}"
+        "-c",
+        "mkdir -p build && g++ -std=c++23 -Wall -Wextra -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer ${file} -o build/${fileBasenameNoExtension}"
       ]
     }
   ]
