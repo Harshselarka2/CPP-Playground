@@ -1,2 +1,30 @@
-main
 .vscode
+# VS Code
+.vscode/
+
+# C/C++ compiled binaries
+*.out
+*.exe
+*.app
+
+# Object files
+*.o
+*.obj
+
+# Static libraries
+*.a
+*.lib
+
+# Shared libraries
+*.so
+*.dll
+*.dylib
+
+# Debug files
+*.pdb
+
+# Build directories
+build/
+bin/
+dist/
+cmake-build-*/
